@@ -10,8 +10,8 @@ passport.use(
     new GoogleStrategy(
         {
             // Configuration options for the Google Strategy
-            clientID:  "147416675224-f86nmg8cac4qpc9a5dn15sldvvtl8i2q.apps.googleusercontent.com",
-            clientSecret: "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",
+            clientID:  process.env.GOOGLE_CLIENT_ID ,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             callbackURL: "http://localhost:5000/auth/google/callback",
         },
         async (accessToken, refreshToken, profile, cb) => {
