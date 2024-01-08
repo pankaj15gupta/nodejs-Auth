@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://127.0.0.1:27017/nodejs_auth');
 
-mongoose.connect('mongodb+srv://pg8793157653:allow1234@cluster0.ui3pyzy.mongodb.net/');
+mongoose.connect(process.env.MONGODB_ATLAS);
 
 const db = mongoose.connection;
 
