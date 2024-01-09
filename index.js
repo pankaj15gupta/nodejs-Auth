@@ -13,7 +13,7 @@ const customMiddleware = require('./config/middleware'); // custom middleware fo
 const db = require('./config/mongoose'); // module for connecting to MongoDB
 const passportLocal = require('./config/passport-local'); // Passport Local authentication strategy
 const passportGoogle = require('./config/passport-google'); // Passport Google authentication strategy
-const port = 5000;
+const port = process.env.PORT || 5000 ;
 // loads environment variables from a .env file
 
 // Create an express application
@@ -38,7 +38,7 @@ app.use(
         },
         store: MongoStore.create({
             // store session data in MongoDB
-            mongoUrl: 'mongodb://127.0.0.1:27017/nodejs_auth',
+            mongoUrl: process.env.DB_URL,
             autoRemove: 'disabled',
         }),
     })
@@ -65,10 +65,10 @@ app.use(customMiddleware.setFlash);
 // Use routes
 app.use('/', require('./routes'));
 
-app.listen(port, (err) => {
+app.listen(process.env.PORT, (err) => {
     if (err) {
         console.log(err, 'Error while running server !');
     }
-    console.log('Server running on port : 5000');
+    console.log('Server running on port ', process.env.PORT);
     return;
 });
