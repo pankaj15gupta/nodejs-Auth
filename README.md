@@ -4,6 +4,9 @@ This is a complete authentication system that can be used as a starter code for 
 The code is well-commented for easy understanding and scalability. The folder structure is separate for models, controllers, and routes, making it easy to scale the project.
 This code can serve as a boilerplate for any Express application that requires a basic authentication module.
 
+
+Deployed Link : https://nodejsauth-o17g.onrender.com
+
 ## Table of Contents
 
 -   [Features](#features)
